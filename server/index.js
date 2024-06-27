@@ -20,17 +20,11 @@ const io = require("socket.io")(http, {
 const messages = [];
 
 io.on("connection", (socket) => {
-  const allMsgsStr = JSON.stringify(messages);
-
-  io.to(socket.id).emit("update", allMsgsStr);
-
   console.log("Someone has connected");
-  socket.on("update", (message) => {
-    messages.push(message);
-    const str = JSON.stringify(messages);
-    console.log(str);
+  socket.on("draw", (info) => {
+    console.log(info);
 
-    io.emit("update", str);
+    io.emit("update", info);
   });
 });
 
