@@ -1,4 +1,4 @@
-const socket = io("ws://localhost:8080");
+const socket = io("https://starfish-app-hzkxh.ondigitalocean.app/");
 
 const grid = document.getElementById("grid");
 const gridSize = {
