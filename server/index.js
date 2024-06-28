@@ -6,11 +6,11 @@ const app = express();
 app.use(cors());
 app.use(express.static(resolve("../client")));
 
-// app.get("/home", (req, res) => {
-//   res.sendFile(resolve("../client/index.html"));
-// });
+app.get("/home", (req, res) => {
+  res.send("hello");
+});
 
-// app.listen(3030, () => console.log("Server started on port" + "3030"));
+app.listen(3030, () => console.log("Server started on port" + "3030"));
 
 const http = require("http");
 
@@ -53,4 +53,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(8080, () => console.log("listening on 8080"));
+// server.listen(8080, () => console.log("listening on 8080"));
