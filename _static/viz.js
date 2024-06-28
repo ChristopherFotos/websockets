@@ -1,4 +1,4 @@
-const socket = io(`ws://${location.host}`);
+const socket = io(`wss://${location.host}`);
 
 const grid = document.getElementById("grid");
 const gridSize = {
